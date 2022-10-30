@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TesteUPD8.Models;
+using TesteUPD8.Models.ViewModel;
 
 namespace TesteUPD8.Controllers
 {

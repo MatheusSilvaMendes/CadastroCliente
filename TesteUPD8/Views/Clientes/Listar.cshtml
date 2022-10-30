@@ -1,0 +1,71 @@
+﻿@model IEnumerable<TesteUPD8.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <div class="card-header py-3">
+            <h1 class="m-0 bold text-primary">Clientes</h1>
+        </div>
+        <div class="card-body">
+            <table id="myTable" class="table table-bordered dataTable table-hover" style="width:100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            CPF
+                        </th>
+                        <th>
+                            Data Nascimento
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th>
+                            Cidade
+                        </th>
+                        <th>
+                            Sexo
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a href="#" class="btn btn btn-warning text-white small btnEdit" data-toggle="modal" data-target="#editarClienteModal" data-value="@item.ClienteId"><i class="fa fa-edit"></i></a>
+                                <a href="#" class="btn btn btn-info text-white small btnDetails" data-toggle="modal" data-target="#detalhesClienteModal" data-value="@item.ClienteId"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="btn btn btn-danger text-white small btnDelete" data-toggle="modal" data-target="#deletarClienteModal" data-value="@item.ClienteId"><i class="fa fa-trash"></i></a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CPF)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DataNascimento)
+                            </td>                                
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Endereco.UFSigla.Sigla)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Endereco.Cidade)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sexo.Genero)
+                            </td>
+                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

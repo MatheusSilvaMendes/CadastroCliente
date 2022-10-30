@@ -1,4 +1,4 @@
-namespace TesteUPD8.Models
+namespace TesteUPD8.Models.ViewModel
 {
     public class ErrorViewModel
     {

@@ -1,0 +1,82 @@
+﻿@model TesteUPD8.Models.ViewModel.ClienteViewModel
+@using TesteUPD8.Models
+
+<form asp-action="Cadastrar">
+    <div class="card mt-4">
+        <h5 class="card-header">:UPD8</h5>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cadastro Cliente</h5>
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">CPF</label>
+                                        <input asp-for="CPF" class="form-control" id="" aria-describedby="emailHelp" placeholder="654.452.786.89">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Nome</label>
+                                        <input asp-for="Nome" class="form-control" id="" aria-describedby="emailHelp" placeholder="Nome">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="exampleInputEmail1">Data Nascimento</label>
+                                        <input asp-for="DataNascimento" type="date" class="form-control" id="" aria-describedby="emailHelp" placeholder="Data Nascimento">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.Sexo.Genero, "M", false)@Html.Label("Masculino")
+                                    @Html.RadioButtonFor(model => model.Sexo.Genero, "F", false)@Html.Label("Feminino")
+                                </div>
+                            </div>
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Endereço</h5>
+                                    <div class="row">
+                                        <div class="form-group col-sm-2">
+                                            <label for="exampleInputEmail1">CEP</label>
+                                            <input asp-for="Endereco.Cep" class="form-control" id="" aria-describedby="emailHelp" placeholder="">
+                                        </div>
+                                        <div class="form-group col-sm-10">
+                                            <label for="exampleInputPassword1">Logradouro</label>
+                                            <input asp-for="Endereco.Logradouro" class="form-control" id="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-sm-2">
+                                            <label for="exampleInputEmail1">Numero</label>
+                                            <input asp-for="Endereco.Numero" class="form-control" id="" aria-describedby="emailHelp" placeholder="">
+                                        </div>
+                                        <div class="form-group col-sm-10">
+                                            <label for="exampleInputEmail1">Complemento</label>
+                                            <input asp-for="Endereco.Complemento" class="form-control" id="" aria-describedby="emailHelp" placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <label for="exampleInputEmail1">Bairro</label>
+                                    <input asp-for="Endereco.Bairro" class="form-control" id="" aria-describedby="emailHelp" placeholder="">
+
+                                    <div class="row">
+                                        <div class="form-group col-sm-8">
+                                            <label for="exampleInputEmail1">Cidade</label>
+                                            <input asp-for="Endereco.Cidade" class="form-control" id="" aria-describedby="emailHelp" placeholder="">
+                                        </div>
+                                        <div class="form-group col-sm-2">
+                                            <label for="exampleInputEmail1">UF</label>
+                                            <select class="form-control" asp-for="Endereco.UFSiglaId" asp-items="ViewBag.UFSiglaId">
+                                                <option disabled selected>-SELECIONE-</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2 mt-4">Salvar</button>
+                            <button type="submit" class="btn btn-secundary mb-2 mt-4">Salvar</button>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
