@@ -31,7 +31,7 @@ namespace TesteUPD8.Controllers
         public IActionResult Cadastrar()
         {
             ViewData["UFSiglaId"] = new SelectList(_context.UF, "UFId", "Nome");
-           // ViewData["Sexo"] = new SelectList(_context.Sexo, "Id", "Genero");
+            ViewData["Sexo"] = new SelectList(_context.Sexo, "Id", "Genero");
 
             return View();
         }
